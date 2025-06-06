@@ -1,0 +1,45 @@
+/* #root {
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+} */
+.main-container{
+  display: flex;
+  flex-direction: column;
+}
+.form-container{  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 97vh;
+}
+.hero{
+  background-color: rgb(57, 57, 57);
+  padding: 25vh;
+  margin: auto;
+  align-items: center;
+  border-radius: 50px;
+  text-align: center;
+  }
+  .after-selecting{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  }
+.CV-styling{
+  display: flex;
+  justify-content: flex-start;
+  overflow-y:scroll;
+  max-height: 92vh;
+  overflow-y: auto;
+  
+}
+.Feedback-styling {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow-y: auto;
+}
