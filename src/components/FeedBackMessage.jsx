@@ -30,14 +30,14 @@ const FeedbackMessage = ({ }) => {
     <>
       <div className="Feedback-container">
         <div className="center-button">
-          <button onClick={showfeedbackMessage} className="Leave-fee">
+          <button onClick={showfeedbackMessage}>
             Leave a Feedback </button>
         </div>
         {feedbackMsg && (
-          <div className='feeback-message'>
+          <>
             <form className="questions-container" onSubmit={SendData}>
+              <h1>Rate the CV</h1>
               <fieldset>
-                <h1>Rate the CV</h1>
                 <label>Excellent <input type="radio" name="group" /></label>
                 <label>Good<input type="radio" name="group" /></label>
                 <label>Moderate<input type="radio" name="group" /></label>
@@ -46,21 +46,22 @@ const FeedbackMessage = ({ }) => {
               </fieldset>
               <div className="open-ended-questions">
                 <h1>Open Ended Question</h1>
-                <label for="likes">What do you like most about this CV?</label><br />
+                <label htmlFor="likes">What do you like most about this CV?</label><br />
                 <textarea id="likes" name="likes" rows="4" cols="50"></textarea><br />
-                <label for="dislikes">What aspects of this CV could be improved?</label><br />
+                <label htmlFor="dislikes">What aspects of this CV could be improved?</label><br />
                 <textarea id="dislikes" name="dislikes" rows="4" cols="50"></textarea><br />
-                <label for="suggestions">What are your suggestions for improvement?</label><br />
+                <label htmlFor="suggestions">What are your suggestions for improvement?</label><br />
                 <textarea id="suggestions" name="suggestions" rows="4" cols="50"></textarea><br />
-                <label for="other">Any other comments or feedback?</label><br />
+                <label htmlFor="other">Any other comments or feedback?</label><br />
                 <textarea id="other" name="other" rows="4" cols="50"></textarea><br />
               </div>
-              <button className="form-footer">
-                Submit
-              </button>
+              <div className="form-footer">
+                <button type="submit">Submit</button>
+              </div>
             </form>
-          </div>
+          </>
         )}
+
       </div >
     </>
   )

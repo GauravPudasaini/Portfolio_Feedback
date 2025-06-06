@@ -6,7 +6,7 @@ import 'react-pdf/dist/Page/TextLayer.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.mjs`;
 
-const FeedbackForm = ({pdfUrl}) => {
+const FeedbackForm = ({ pdfUrl }) => {
   const [numPages, setNumPages] = useState();
 
   const onDocumentLoadSuccess = ({ numPages }) => {
@@ -18,13 +18,13 @@ const FeedbackForm = ({pdfUrl}) => {
         <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess} >
           {Array.from(new Array(numPages), (_, index) => (
             <div key={`page_${index + 1}`} style={{ marginBottom: '20px' }}>
-              <Page pageNumber={index + 1} scale={1 } width={400} renderMode="canvas" />
+              <Page pageNumber={index + 1} scale={2} width={400} renderMode="canvas" />
             </div>
           ))}
         </Document>
       )}
-    </div>  
-  ); 
+    </div>
+  );
 };
 
 export default FeedbackForm;
@@ -41,9 +41,9 @@ export default FeedbackForm;
 
 //     WebViewer(
 //       {
-//         path: '/lib', 
+//         path: '/lib',
 //         initialDoc: pdfUrl,
-//         licenseKey: '', 
+//         licenseKey: '',
 //       },
 //       viewerRef.current
 //     );
