@@ -18,7 +18,7 @@ const FeedbackForm = ({ pdfUrl }) => {
         <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess} >
           {Array.from(new Array(numPages), (_, index) => (
             <div key={`page_${index + 1}`} style={{ marginBottom: '20px' }}>
-              <Page pageNumber={index + 1} scale={2} width={400} renderMode="canvas" />
+              <Page pageNumber={index + 1} scale={2} width={450} renderMode="canvas" />
             </div>
           ))}
         </Document>

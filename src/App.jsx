@@ -1,6 +1,6 @@
   import { useState } from 'react';
   import './App.css'
-  import FeedbackForm from './components/feedbackForm';
+  import FeedbackForm from './components/FeedbackForm.jsx';
   import FeedbackMessage from './components/FeedBackMessage';
   import BrowseButton from './components/BrowseButton';
 
