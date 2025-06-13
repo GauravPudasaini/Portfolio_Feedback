@@ -1,13 +1,21 @@
 import "./BrowseButton.css";
+import { useNavigate } from 'react-router-dom';
 
-const BrowseButton = ({ setPdfUrl, setHideBrowseButton }) => {
+const BrowseButton = ({ setPdfUrl }) => {
+  const navigate = useNavigate();
+
   const browseResume = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      setPdfUrl(url);
-      setHideBrowseButton(false); 
-    }
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataurl = reader.result;
+      localStorage.setItem('pdfData', dataurl);
+      setPdfUrl(dataurl);
+      navigate('/portfolio-feedback');
+    };
+    reader.readAsDataURL(file);
   };
 
   return (

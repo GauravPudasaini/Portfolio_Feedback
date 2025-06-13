@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './FeedbackForm.css';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -8,14 +8,22 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pd
 
 const FeedbackForm = ({ pdfUrl }) => {
   const [numPages, setNumPages] = useState();
+  const [localPdfUrl, setLocalPdfUrl] = useState(null);
+
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
   };
+  useEffect(() => {
+    const stored = localStorage.getItem("pdfData");
+    if (stored) {
+      setLocalPdfUrl(stored);
+    }
+  }, []);
   return (
     <div className="portfoli-container">
-      {pdfUrl && (
-        <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess} >
+      {localPdfUrl && (
+        <Document file={localPdfUrl} onLoadSuccess={onDocumentLoadSuccess} >
           {Array.from(new Array(numPages), (_, index) => (
             <div key={`page_${index + 1}`} style={{ marginBottom: '20px' }}>
               <Page pageNumber={index + 1} scale={2} width={450} renderMode="canvas" />

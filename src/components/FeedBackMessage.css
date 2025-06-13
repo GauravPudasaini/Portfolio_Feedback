@@ -4,13 +4,15 @@
   flex-direction: column;
   margin-left: 20px;
   overflow: auto;
-  height: 92vh;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
   border-radius: 20px;
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */ 
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
 }
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -39,7 +41,7 @@ button:focus-visible {
 .questions-container {
   display: flex;
   flex-direction: column;
-  gap: 20px ;
+  gap: 20px;
   padding: 20px;
   color: black;
 }
@@ -54,17 +56,13 @@ button:focus-visible {
   border-radius: 20px;
 
 }
-/* .center-button {
-  text-align: center;
-  margin-bottom: 20px;
-} */
 
 .questions-container fieldset {
   border: none;
   padding: 0;
   width: 30vh;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -75,6 +73,7 @@ button:focus-visible {
 .form-footer {
   text-align: center;
 }
+
 .open-ended-questions textarea {
   width: 100%;
   font-size: 14px;
@@ -85,10 +84,12 @@ button:focus-visible {
   color: black;
 
 }
+
 .open-ended-questions label {
   margin-bottom: 5px;
   color: #000000;
 }
+
 .custom-radio input[type="radio"] {
   appearance: none;
   -webkit-appearance: none;

@@ -1,39 +1,19 @@
-  import { useState } from 'react';
-  import './App.css'
-  import FeedbackForm from './components/FeedbackForm.jsx';
-  import FeedbackMessage from './components/FeedBackMessage';
-  import BrowseButton from './components/BrowseButton';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Home from './Home';
+import PortfolioFeedback from './components/PortfolioFeedback';
 
-  function App() {
-      const [pdfUrl, setPdfUrl] = useState(null);
-      const [isButton, showButton] = useState(true);
-    return (
-      <>
-      <div className='main-container' >
-        {isButton && (
-        <div className= 'form-container'>
-          <div className='hero'>
-            <BrowseButton
-              setPdfUrl={setPdfUrl}
-              setHideBrowseButton={showButton}
-            />
-          </div>
-          </div>
-        )}
-        <div className='after-selecting'> 
-          <div className='CV-styling'>
-        <FeedbackForm pdfUrl={pdfUrl}  />
-        </div>
-        <div className='Feedback-styling'>
-        {!isButton && (
-          <FeedbackMessage onChange = {() => {showButton(true)}}  />
-        )}
-        </div>
-        </div>
-        
-      </div>
-      </>
-    ) 
-  }
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        {/* <Route path="/" element={<Navigate to="/Home" />} /> */}
+        <Route path="/"  element={<Navigate to = '/Home' replace/>}/>
+        <Route path="/Home" element={<Home />}   />
+        <Route path="/portfolio-feedback" element={<PortfolioFeedback />} />
+      </Routes>
+    </Router>
+  );
+};
 
-  export default App
+export default App;

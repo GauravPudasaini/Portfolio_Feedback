@@ -1,0 +1,9 @@
+.sidebar-container{
+    width: 3rem;
+    height: 100%;
+    margin-right: 2px;
+}
+.sidebar-container button {
+    background-color: white;
+    color: black;
+}
